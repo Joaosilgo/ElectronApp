@@ -1,4 +1,4 @@
-# electron-quick-start
+# ⚛ ElectronApp
 
 ````bash
 echo "# ElectronApp" >> README.md
