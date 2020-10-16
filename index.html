@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-eval'">
+  <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+  <title>ElectronApp</title>
+
+  
+   
+  
+   <link type="text/css" rel="stylesheet" href="./Assets/css/css/normalize.css" />
+   <link type="text/css" rel="stylesheet" href="./Assets/css/css/skeleton.css"  />
+
+   <!--Let browser know website is optimized for mobile-->
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+</head>
+
+
+
+
+<body>
+
+  <div class="container">
+  <h1>Hello World!</h1>
+  We are using Node.js <span id="node-version"></span>,
+  Chromium <span id="chrome-version"></span>,
+  and Electron <span id="electron-version"></span>.
+
+
+
+  <div id=output></div>
+  
+
+
+  <table class="u-full-width">
+    <thead>
+      <tr>
+        <th>Specs</th>
+        <th>Arch</th>
+        <th>Processor</th>
+     
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>System Specs</td>
+        <td id="Arch"></td>
+        <td id="Processor"></td>
+        
+      </tr>
+     
+    </tbody>
+  </table>
+
+
+
+
+  <table class="u-full-width">
+    <thead>
+      <tr>
+        <th>Specs</th>
+        <th>Computer</th>
+        <th>Memory Total (Kb)</th>
+        <th>Memory Free (Kb)</th>
+        <th>Memory Usage (Kb)</th>
+     
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>System Specs</td>
+        <td id="Computer"></td>
+        <td id="Memorytotal"></td>
+        <td id="Memoryfree"></td>
+        <td id="MemoryUsage"></td>
+        
+        
+        
+      </tr>
+     
+    </tbody>
+  </table>
+
+
+</div>
+
+
+
+
+
+ 
+  <!-- You can also require other files to run in this process -->
+  <script src="./app.js"></script>
+  <script src="./renderer.js"></script>
+
+</body>
+
+</html>

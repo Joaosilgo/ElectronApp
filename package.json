@@ -1,0 +1,26 @@
+{
+  "name": "electronapp",
+  "version": "1.0.0",
+  "description": "A minimal Electron application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "JoãoGomes",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^10.1.3"
+  },
+  "dependencies": {
+    "npm": "^6.14.8",
+    "start": "^5.1.0"
+  }
+}
