@@ -1,0 +1,17 @@
+  
+name: ElectronApp
+description:
+  'A minimal Electron application'
+website: 'https://joaosilgo.github.io/joaogomes/'
+repository: 'https://github.com/Joaosilgo/ElectronApp'
+keywords:
+  - electron
+  - app
+  - simple
+license: GPLv3
+category: 'Developer Tools'
+screenshots:
+  - imageUrl: 'https://raw.githubusercontent.com/Joaosilgo/dummy_db/main/svg/_banner.svg'
+    caption: 'First Start'
+    imageLink: 'https://github.com/Joaosilgo/ElectronApp'
+ 
