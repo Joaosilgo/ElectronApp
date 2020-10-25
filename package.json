@@ -6,7 +6,6 @@
   "scripts": {
     "start": "electron ."
   },
-
   "keywords": [
     "Electron",
     "quick",

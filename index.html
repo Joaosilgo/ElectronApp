@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-eval'">
+ <!--  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-eval'"> -->
   <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
   <title>ElectronApp</title>
 
@@ -13,6 +13,7 @@
   
    <link type="text/css" rel="stylesheet" href="./Assets/css/css/normalize.css" />
    <link type="text/css" rel="stylesheet" href="./Assets/css/css/skeleton.css"  />
+   <link type="text/css" rel="stylesheet" href="./Assets/css/main.css"  />
 
    <!--Let browser know website is optimized for mobile-->
    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -47,10 +48,9 @@
     </thead>
     <tbody>
       <tr>
-        <td>System Specs</td>
+        <td>Processor</td>
         <td id="Arch"></td>
-        <td id="Processor"></td>
-        
+        <td id="Processor"></td> 
       </tr>
      
     </tbody>
@@ -72,7 +72,7 @@
     </thead>
     <tbody>
       <tr>
-        <td>System Specs</td>
+        <td>Memory Specs</td>
         <td id="Computer"></td>
         <td id="Memorytotal"></td>
         <td id="Memoryfree"></td>
@@ -86,10 +86,63 @@
   </table>
 
 
+
+
+
+  <table id="cpuTable" class="u-full-width">
+    <thead>
+      <tr>
+        
+        <th>Core</th>
+        <th>Speed</th>
+        <th>UserMode</th>
+        <th>NiceMode</th>
+        <th>SysMode</th>
+     
+      </tr>
+    </thead>
+    <tbody id="cpu">
+
+      
+     
+    </tbody>
+
+
+    </tbody>
+  </table>
+
+
+  <button class="button-primary">Button element</button>
+
+
 </div>
 
 
 
+
+
+
+<div class="band" id="band">
+  <div class="item-1">
+    <a href="https://design.tutsplus.com/articles/international-artist-feature-malaysia--cms-26852" class="card">
+      <div class="thumbnail" style="background-image: url(https://raw.githubusercontent.com/Joaosilgo/dummy_db/main/svg/_banner.svg);"></div>
+      <article>
+        <h5>International Artist Feature: Malaysia</h5>
+        <span>Mary Winkler</span>
+      </article>
+    </a>
+  </div>
+ 
+
+ 
+
+ 
+
+
+</div>
+
+
+  
 
 
  

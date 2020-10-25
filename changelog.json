@@ -1,0 +1,10 @@
+{
+    "releases": {
+        "0.0.1": [
+            "[New] New Things",
+            "[Fixed] Fixed",
+            "[Added] " ,
+            "[Improved] " 
+        ] 
+    }
+}
