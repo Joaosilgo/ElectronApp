@@ -155,7 +155,7 @@ setInterval(getCpu, 500);
 
 
 // Replace  with your JSON feed
-fetch('https://api.github.com/users/Joaosilgo/repos')
+fetch('https://api.github.com/users/Joaosilgo/repos?per_page=100')
   .then((response) => {
 
 
@@ -223,3 +223,73 @@ document.body.addEventListener('click', event => {
   }
 });
 
+
+
+
+
+document.getElementById('form').addEventListener('submit', function (evt) {
+  evt.preventDefault();
+  console.log("Form submited");
+  git_user = document.getElementById("git_user").value;
+  get_git_user(git_user)
+})
+
+
+function get_git_user(user) {
+
+  fetch('https://api.github.com/users/{git_user}'.formatUnicorn({ git_user: user }))
+    .then((response) => {
+      if ((response.status == 404) || (response.status == 0)) {
+        console.log(response.status);
+      }
+      else {
+        return response.json()
+      }
+    })
+    .then((data) => {
+      // Work with JSON data here
+      if (data != null) {
+        console.log(data)
+        get_git_user_info(data);
+      }
+    })
+    .catch((err) => {
+      // Do something for an error here
+      console.log(err)
+    })
+    
+
+ 
+   
+
+
+}
+
+
+function get_git_user_info(data) {
+
+ // var statusHTML = '';
+  console.log(data);
+ // statusHTML = '<div class="item-1"><a  href="{html_url}" class="card" target="_blank" >  <div class="thumbnail" style="background-image: url(https://raw.githubusercontent.com/Joaosilgo/dummy_db/main/svg/_banner.svg);"></div><article><h6>{name}</h6><span>{login}</span></article></a></div>'.formatUnicorn(data);
+  // document.getElementById("band").innerHTML=node;
+  document.getElementById("name").innerText = data.name;
+  document.getElementById("login").innerText = data.login;
+  document.getElementById("bios").innerText = data.bio;
+  document.getElementById("href").setAttribute("href", data.html_url);
+  document.getElementById("public_repos").innerText = data.public_repos;
+  document.getElementById("followers").innerText = data.followers;
+  document.getElementById("following").innerText = data.following;
+  //document.getElementById("band").insertAdjacentHTML("afterbegin", statusHTML)
+}
+
+/*
+<div class="item-1">
+<a href="https://design.tutsplus.com/articles/international-artist-feature-malaysia--cms-26852" class="card">
+  <div class="thumbnail" style="background-image: url(https://raw.githubusercontent.com/Joaosilgo/dummy_db/main/svg/_banner.svg);"></div>
+  <article>
+    <h5>International Artist Feature: Malaysia</h5>
+    <span>Mary Winkler</span>
+  </article>
+</a>
+</div>
+*/
