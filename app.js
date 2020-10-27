@@ -152,22 +152,30 @@ setInterval(getCpu, 500);
 
 
 
-
+function get_git_user_repo(user){
 
 // Replace  with your JSON feed
-fetch('https://api.github.com/users/Joaosilgo/repos?per_page=100')
+fetch('https://api.github.com/users/{git_user}/repos?per_page=100'.formatUnicorn({ git_user: user }))
   .then((response) => {
 
 
+    if ((response.status == 404) || (response.status == 0)) {
+      console.log(response.status);
+    }
+    else {
+      return response.json()
+    }
 
-
-    return response.json()
+   
   })
   .then((data) => {
     // Work with JSON data here
     // console.log(data)
-
-    getRepo(data);
+    if (data != null) {
+      console.log(data)
+      getRepo(data);
+    }
+    
   })
   .catch((err) => {
     // Do something for an error here
@@ -175,7 +183,7 @@ fetch('https://api.github.com/users/Joaosilgo/repos?per_page=100')
 
 
 
-
+}
 
 String.prototype.formatUnicorn = String.prototype.formatUnicorn ||
   function () {
@@ -230,8 +238,13 @@ document.body.addEventListener('click', event => {
 document.getElementById('form').addEventListener('submit', function (evt) {
   evt.preventDefault();
   console.log("Form submited");
+  const grid = document.getElementById("band");
+  while (grid.firstChild) {
+    grid.removeChild(grid.lastChild);
+  }
   git_user = document.getElementById("git_user").value;
   get_git_user(git_user)
+  get_git_user_repo(git_user)
 })
 
 
@@ -270,8 +283,9 @@ function get_git_user_info(data) {
 
  // var statusHTML = '';
   console.log(data);
- // statusHTML = '<div class="item-1"><a  href="{html_url}" class="card" target="_blank" >  <div class="thumbnail" style="background-image: url(https://raw.githubusercontent.com/Joaosilgo/dummy_db/main/svg/_banner.svg);"></div><article><h6>{name}</h6><span>{login}</span></article></a></div>'.formatUnicorn(data);
+  statusHTML = '<div class="item-1"><a  href="{html_url}" class="card" target="_blank" >  <img class="avatar" src="{avatar_url}"></img><article><h6>{name}</h6><span>{login}</span></article></a></div>'.formatUnicorn(data);
   // document.getElementById("band").innerHTML=node;
+  /*
   document.getElementById("name").innerText = data.name;
   document.getElementById("login").innerText = data.login;
   document.getElementById("bios").innerText = data.bio;
@@ -279,7 +293,8 @@ function get_git_user_info(data) {
   document.getElementById("public_repos").innerText = data.public_repos;
   document.getElementById("followers").innerText = data.followers;
   document.getElementById("following").innerText = data.following;
-  //document.getElementById("band").insertAdjacentHTML("afterbegin", statusHTML)
+  */
+  document.getElementById("band").insertAdjacentHTML("afterbegin", statusHTML)
 }
 
 /*

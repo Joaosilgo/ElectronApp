@@ -12,6 +12,7 @@ function createWindow () {
     width: 800,
     height: 600,
     backgroundColor: 'gray',
+    icon: path.join(__dirname, 'assets/icons/win/icon.ico'),
    // resizable: false,
     opacity: 0.92,
     show: true,
@@ -33,7 +34,7 @@ function createWindow () {
   mainWindow.loadFile('index.html')
 
   // Open the DevTools.
-   mainWindow.webContents.openDevTools()
+  // mainWindow.webContents.openDevTools()
 
 
    // This is the actual solution
